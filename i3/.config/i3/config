@@ -4,7 +4,6 @@
 # Should you change your keyboard layout some time, delete
 # this file and re-run i3-config-wizard(1).
 #
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -24,7 +23,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment "i3 > ~/.i3/i3log.txt 2>&1"
 
 
-exec --no-startup-id alacritty -e "redshift > /dev/null &"
+exec --no-startup-id alacritty -e "redshift"
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
