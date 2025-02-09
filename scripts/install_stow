@@ -1,0 +1,14 @@
+#!/usr/bin/env zsh
+
+# Command stow
+command="stow"
+
+if ! command -v $command &>/dev/null; then
+    echo "$command not installed. Installing..."
+
+    sudo apt update &>/dev/null && sudo apt install $command -y &>/dev/null
+
+    echo "$command installed successfully."
+else
+    echo "$command already installed."
+fi

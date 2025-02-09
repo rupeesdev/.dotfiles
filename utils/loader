@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+
+# Configuración del spinner
+# Configuración del spinner corregida para ZSH
+# Configuración corregida para arrays asociativos en ZSH
+typeset -Ag SPINNER=(
+    interval  '0.04'
+    frames    "⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏"  # Cadena separada por espacios
+)
+
+# Luego, donde necesites usar los frames:
+local frames_array=(${(s: :)SPINNER[frames]})
+
+# Iniciar spinner
+function start_spinner() {
+    local -i spin_pid
+    {
+        hide_cursor
+        while true; do
+            for frame in "${frames_array[@]}"; do
+                printf "\r[%s] %s" "${frame}" "${1}"
+                sleep "${SPINNER[interval]}"
+            done
+        done
+    } &
+    spin_pid=$!
+    return $spin_pid
+}
+
+# Detener spinner
+function stop_spinner() {
+    show_cursor
+    kill -9 $1 2>/dev/null
+    printf "\r\033[K"
+}
+
+# Función principal para ejecutar comandos
+function execute_with_spinner() {
+    local command=($@)
+    local message="${command[@]}"
+    
+    start_spinner "${message}"
+    local spin_pid=$!
+    
+    # Ejecutar comando en segundo plano
+    ${=command} &>/dev/null
+    local exit_code=$?
+    
+    stop_spinner $spin_pid
+    return $exit_code
+}
+
+# Helpers de visibilidad del cursor
+function hide_cursor() { print -n '\033[?25l' }
+function show_cursor() { print -n '\033[?25h' }
+
+# Ejemplo de uso:
+# source ./utils/loader.sh
+# execute_with_spinner sleep 2

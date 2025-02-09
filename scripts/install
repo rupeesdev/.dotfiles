@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-sudo apt update && sudo apt install stow
-
 pushd $DOTFILES
 for folder in $(echo $STOW_FOLDERS | sed "s/,/ /g")
 do
@@ -9,4 +7,6 @@ do
     stow -D $folder
     stow $folder
 done
+
+echo "Installation complete"
 popd

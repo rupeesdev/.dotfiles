@@ -7,4 +7,14 @@ if [[ -z $DOTFILES ]]; then
     DOTFILES=$HOME/.dotfiles
 fi
 
-STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES $DOTFILES/install
+STOW_FOLDERS=$STOW_FOLDERS DOTFILES=$DOTFILES
+
+# Execute all files in scripts directory
+if [[ -d "$DOTFILES/scripts" ]]; then
+    for script in "$DOTFILES"/scripts/*; do
+        if [[ -f "$script" ]]; then
+            chmod +x "$script"  # Ensure file is executable
+            "$script"
+        fi
+    done
+fi
