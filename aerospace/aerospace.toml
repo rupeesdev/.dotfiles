@@ -1,0 +1,59 @@
+# Configuración general (DEBE IR AL INICIO)
+start-at-login = true
+
+# Gaps entre ventanas
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+# Atajos de teclado
+[mode.main.binding]
+
+# === CAMBIAR ENTRE ESPACIOS (instantáneo) ===
+alt-1 = 'workspace 1'
+alt-2 = 'workspace 2'
+alt-3 = 'workspace 3'
+alt-4 = 'workspace 4'
+alt-5 = 'workspace 5'
+
+# Navegar prev/next
+alt-h = 'workspace prev'
+alt-l = 'workspace next'
+
+# === MOVER VENTANA A ESPACIO ===
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
+
+# === MOVER VENTANA Y SEGUIRLA ===
+alt-ctrl-1 = ['move-node-to-workspace 1', 'workspace 1']
+alt-ctrl-2 = ['move-node-to-workspace 2', 'workspace 2']
+alt-ctrl-3 = ['move-node-to-workspace 3', 'workspace 3']
+alt-ctrl-4 = ['move-node-to-workspace 4', 'workspace 4']
+
+# === FOCUS ENTRE VENTANAS (estilo Vim) ===
+alt-j = 'focus down'
+alt-k = 'focus up'
+
+# === LAYOUT ===
+alt-f = 'fullscreen'
+alt-t = 'layout tiles horizontal vertical'
+alt-shift-space = 'layout floating tiling'
+
+# === RESIZE VENTANAS ===
+alt-shift-h = 'resize width -50'
+alt-shift-l = 'resize width +50'
+alt-shift-j = 'resize height +50'
+alt-shift-k = 'resize height -50'
+
+# === CERRAR VENTANA ===
+alt-shift-q = 'close'
+
+# === RECARGAR CONFIG ===
+alt-shift-r = 'reload-config'

@@ -1,0 +1,13 @@
+font-family = JetBrainsMono Nerd Font
+font-thicken = true
+font-size = 12
+theme = Catppuccin Mocha
+
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.9
+
+cursor-style = bar
+cursor-style-blink = false
+
+scrollback-limit = 10000
