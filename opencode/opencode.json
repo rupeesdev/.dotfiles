@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "bash": {
+      "*": "ask",
+      "curl *": "allow",
+      "defuddle parse *": "allow",
+      "python3 -c *": "allow"
+    },
+    "webfetch": "ask"
+  },
+  "provider": {
+    "opencode": {
+      "name": "opencode"
+    }
+  }
+}

@@ -106,6 +106,9 @@ install_brew_packages() {
     # Terminal
     ghostty       # Emulador de terminal moderno
 
+    # AI CLI
+    opencode      # Terminal AI coding assistant
+
     # Fuentes (necesarias para iconos en Ghostty/Neovim)
     font-jetbrains-mono-nerd-font
     font-symbols-only-nerd-font
